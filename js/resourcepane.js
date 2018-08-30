@@ -14,8 +14,9 @@ function add_tab(load_id=null) {
     add_resource_header();
 
     var resource_type_idx = document.getElementById("resource_type").options.selectedIndex;
-    var resource_type_txt = document.getElementById("resource_type").options[resource_type_idx].text;
-    if (resource_type_txt.toLowerCase() === "text") { add_text_resource_body(tab_id); }
+    var resource_type_id = document.getElementById("resource_type").options[resource_type_idx].id;
+    if (resource_type_id === "option_text") { add_text_resource_body(tab_id); }
+    else if (resource_type_id ==="option_sadn") { add_sadn_resource_body(tab_id); }
 
     set_active_tab(tab_id+"_body");
     return tab_id
